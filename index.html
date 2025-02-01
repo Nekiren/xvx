@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>marcus no x</title>
+    <title>marcus no X</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
-        input, button {
-            padding: 10px;
-            font-size: 16px;
-            margin: 10px;
+        a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
         }
         .warning {
             color: red;
@@ -22,31 +22,21 @@
     </style>
 </head>
 <body>
-    <h1>Gerador de Abas</h1>
-    <p>Digite o site e o número de abas que deseja abrir:</p>
-    <input type="text" id="site" placeholder="https://www.exemplo.com" value="https://www.google.com">
-    <input type="number" id="numeroAbas" placeholder="Número de abas" min="1" max="50" value="5">
-    <button id="abrirAbas">Abrir Abas</button>
-    <p class="warning">Aviso: Abrir muitas abas pode sobrecarregar seu navegador ou sistema.</p>
+    <h1>⬇️⬇️⬇️</h1>
+    <p>⛓️‍💥⛓️‍💥⛓️‍💥.</p>
+    <a id="abrirGuias" href="#">Clique aqui para abrir guias</a>
+    <p class="warning">Aviso: marcus dando muito a bunda.</p>
 
     <script>
-        const abrirAbasButton = document.getElementById("abrirAbas");
+        const abrirGuiasLink = document.getElementById("abrirGuias");
 
-        abrirAbasButton.addEventListener("click", () => {
-            const site = document.getElementById("site").value;
-            const numeroAbas = parseInt(document.getElementById("numeroAbas").value);
+        abrirGuiasLink.addEventListener("click", (event) => {
+            event.preventDefault(); // Impede o comportamento padrão do link
 
-            if (!site || isNaN(numeroAbas) || numeroAbas < 5) {
-                alert("Por favor, insira um site válido e um número de abas maior que 0.");
-                return;
-            }
+            const site = "https://www.youtube.com/watch?v=4Lo5m9WlD6w"; // Site que será aberto
+            const numeroGuias = 5; // Número de guias a serem abertas
 
-            if (numeroAbas > 50) {
-                alert("O número máximo de abas permitido é 50.");
-                return;
-            }
-
-            for (let i = 5; i < numeroAbas; i++) {
+            for (let i = 0; i < numeroGuias; i++) {
                 window.open(site, "_blank");
             }
         });
