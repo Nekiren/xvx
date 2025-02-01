@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marcus no x</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Abas</h1>
+    <p>Digite o site e o número de abas que deseja abrir:</p>
+    <input type="text" id="site" placeholder="https://www.exemplo.com" value="https://www.google.com">
+    <input type="number" id="numeroAbas" placeholder="Número de abas" min="1" max="50" value="5">
+    <button id="abrirAbas">Abrir Abas</button>
+    <p class="warning">Aviso: Abrir muitas abas pode sobrecarregar seu navegador ou sistema.</p>
+
+    <script>
+        const abrirAbasButton = document.getElementById("abrirAbas");
+
+        abrirAbasButton.addEventListener("click", () => {
+            const site = document.getElementById("site").value;
+            const numeroAbas = parseInt(document.getElementById("numeroAbas").value);
+
+            if (!site || isNaN(numeroAbas) || numeroAbas < 5) {
+                alert("Por favor, insira um site válido e um número de abas maior que 0.");
+                return;
+            }
+
+            if (numeroAbas > 50) {
+                alert("O número máximo de abas permitido é 50.");
+                return;
+            }
+
+            for (let i = 5; i < numeroAbas; i++) {
+                window.open(site, "_blank");
+            }
+        });
+    </script>
+</body>
+</html>
